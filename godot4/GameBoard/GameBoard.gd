@@ -108,6 +108,9 @@ func _select_unit(cell: Vector2) -> void:
 		return
 
 	_active_unit = _units[cell]
+	if not _active_unit.is_player_controlled():
+		_active_unit = null
+		return
 	_active_unit.is_selected = true
 	_walkable_cells = get_walkable_cells(_active_unit)
 	_unit_overlay.draw(_walkable_cells)

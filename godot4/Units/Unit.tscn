@@ -52,13 +52,21 @@ modulate = Color(0.101961, 0.109804, 0.0901961, 0.329412)
 position = Vector2(0, 5.43238)
 texture = ExtResource("3")
 
-[node name="Sprite" type="Sprite2D" parent="PathFollow2D"]
-position = Vector2(2, 0)
-scale = Vector2(0.24, 0.24)
-offset = Vector2(-3.8147e-06, -185)
+[node name="Sprite" type="AnimatedSprite2D" parent="PathFollow2D"]
+position = Vector2(0, -18)
+
+[node name="HealthBar" type="Node2D" parent="PathFollow2D"]
+position = Vector2(-20, -60)
+
+[node name="Fill" type="Sprite2D" parent="PathFollow2D/HealthBar"]
+centered = false
+position = Vector2(2, 2)
+
+[node name="Frame" type="Sprite2D" parent="PathFollow2D/HealthBar"]
+centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 libraries = {
-"": SubResource("AnimationLibrary_5dan3")
+	"": SubResource("AnimationLibrary_5dan3")
 }
